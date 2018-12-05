@@ -1,5 +1,6 @@
 package com.example.bahrber.passwordencrypter;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,14 +22,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView pass = (TextView) findViewById(R.id.PasswordInput);
 
-        variable =  pass.getText().toString();
-        Button button = (Button) findViewById(R.id.EncrpytButton);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button start = findViewById(R.id.start);
+        start.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                TextView updated = (TextView) findViewById(R.id.NewPassword);
-                updated.setText(variable);
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
             }
         });
 
