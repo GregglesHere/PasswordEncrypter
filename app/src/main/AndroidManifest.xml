@@ -13,6 +13,10 @@
             android:label="Home Page!!">
 
         </activity>
+        <activity android:name=".StorageActivity"
+            android:label="Storage!!">
+
+        </activity>
         <activity
             android:name=".MainActivity"
             android:label="Launch Page"
