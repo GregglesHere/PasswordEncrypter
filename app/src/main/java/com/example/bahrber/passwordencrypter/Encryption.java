@@ -1,7 +1,11 @@
 package com.example.bahrber.passwordencrypter;
 
+import org.jasypt.util.numeric.BasicIntegerNumberEncryptor;
 import org.jasypt.util.password.BasicPasswordEncryptor;
 import org.jasypt.util.password.StrongPasswordEncryptor;
+import org.jasypt.util.text.BasicTextEncryptor;
+
+import java.math.BigInteger;
 
 
 public class Encryption {
@@ -17,9 +21,18 @@ public class Encryption {
         String newPassword = encryptor.encryptPassword(password);
         return newPassword;
     }
+    
+    public BigInteger basicIntegerPasswordEncryption (String password) {
+        BasicIntegerNumberEncryptor encryptor = new BasicIntegerNumberEncryptor();
+        int passwordAsInt = Integer.parseInt(password);
+        BigInteger passwordAsBigInt = BigInteger.valueOf(passwordAsInt);
+        BigInteger newPassword = encryptor.encrypt(passwordAsBigInt);
+        return newPassword;
+    }
 
-    public int hashEncryption (String password) {
-        int newPassword = password.hashCode();
+    public String basicTextPasswordEncryption (String password) {
+        BasicTextEncryptor encryptor = new BasicTextEncryptor();
+        String newPassword = encryptor.encrypt(password);
         return newPassword;
     }
 }

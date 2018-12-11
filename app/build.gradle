@@ -28,4 +28,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation files('/Users/Sahaj/Desktop/PasswordEncrypter/libs/jasypt-1.9.2.jar')
+    implementation files('C:/Users/gfern/AndroidStudioProjects/PasswordEncrypter/libs/jasypt-1.9.2.jar')
+    implementation files('libs/jasypt-1.9.2.jar')
 }
